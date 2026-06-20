@@ -84,23 +84,53 @@ p {
 }
 
 .brand-mark {
+  position: relative;
   display: grid;
-  place-items: center;
+  align-content: center;
+  gap: 8px;
   width: 72px;
   height: 72px;
   border: 1px solid var(--line);
   border-radius: 18px;
   background:
-    linear-gradient(135deg, var(--orange), var(--coral)),
-    var(--orange);
-  box-shadow: 0 12px 38px rgba(243, 91, 36, 0.28);
+    radial-gradient(circle at 50% 50%, rgba(246, 239, 229, 0.16), transparent 36%),
+    linear-gradient(135deg, var(--midnight), var(--deep));
+  box-shadow: 0 12px 38px rgba(3, 31, 41, 0.45);
+  padding: 17px 13px;
 }
 
 .brand-mark span {
-  color: #082b35;
-  font-size: 3.1rem;
-  font-weight: 1000;
-  line-height: 1;
+  display: block;
+  height: 12px;
+  border: 2px solid var(--mint);
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--orange) 0 58%, transparent 58%);
+  box-shadow: 0 0 16px rgba(245, 145, 47, 0.38);
+}
+
+.brand-mark span:last-child {
+  background: linear-gradient(90deg, var(--coral) 0 76%, transparent 76%);
+}
+
+.brand-mark::before,
+.brand-mark::after {
+  position: absolute;
+  content: "";
+  border-radius: 999px;
+  background: var(--ink);
+  opacity: 0.8;
+}
+
+.brand-mark::before {
+  inset: 50% 18px auto;
+  height: 2px;
+}
+
+.brand-mark::after {
+  top: 18px;
+  bottom: 18px;
+  left: 50%;
+  width: 2px;
 }
 
 .eyebrow,
