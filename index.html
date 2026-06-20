@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#063f4f">
+    <title>Two a Day</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="assets/icon-192.png">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="hero">
+        <div class="brand-mark" aria-hidden="true">
+          <span>2</span>
+        </div>
+        <div class="hero-copy">
+          <p class="eyebrow">Local daily protocol</p>
+          <h1>Two a Day</h1>
+          <p class="subline">Two movements. 200 reps each. No account, no cloud.</p>
+        </div>
+      </header>
+
+      <main>
+        <section class="status-grid" aria-label="Daily status">
+          <div class="hud-stat">
+            <span id="todayDate">Today</span>
+            <strong id="statusLabel">In progress</strong>
+          </div>
+          <div class="hud-stat">
+            <span>Streak</span>
+            <strong><span id="streakCount">0</span> days</strong>
+          </div>
+          <div class="hud-stat">
+            <span>Target</span>
+            <strong>400 reps</strong>
+          </div>
+        </section>
+
+        <section class="today-panel" aria-labelledby="todayTitle">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Today</p>
+              <h2 id="todayTitle">Active Pair</h2>
+            </div>
+            <span class="complete-badge" id="completeBadge" hidden>Auto complete</span>
+          </div>
+
+          <div class="exercise-grid" id="exerciseGrid" aria-live="polite"></div>
+
+          <div class="slot-machine" id="slotMachine" aria-live="polite">
+            <div class="slot-window">
+              <div class="slot-reel" id="slotOne">Ready</div>
+            </div>
+            <div class="slot-window">
+              <div class="slot-reel" id="slotTwo">Set</div>
+            </div>
+          </div>
+
+          <div class="actions-bar">
+            <button class="primary-action" id="randomizeButton" type="button">Spin random pair</button>
+            <button class="secondary-action" id="manualPickButton" type="button">Pick from deck</button>
+          </div>
+
+          <section class="deck-picker" id="deckPicker" aria-labelledby="deckTitle" hidden>
+            <div class="deck-heading">
+              <div>
+                <h3 id="deckTitle">Exercise Deck</h3>
+                <p id="deckHint">Tap two cards, or tap one and add a random partner.</p>
+              </div>
+              <span id="selectedCount">0/2</span>
+            </div>
+            <div class="deck-grid" id="deckGrid"></div>
+            <div class="deck-actions">
+              <button class="secondary-action" id="randomPartnerButton" type="button">Randomize 2</button>
+              <button class="primary-action" id="startButton" type="button" disabled>Get started</button>
+            </div>
+          </section>
+
+          <button class="reset-action" id="resetButton" type="button">Reset today</button>
+        </section>
+
+        <section class="history-panel" aria-labelledby="historyTitle">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Logbook</p>
+              <h2 id="historyTitle">History</h2>
+            </div>
+            <button class="text-action" id="clearHistoryButton" type="button">Clear</button>
+          </div>
+          <div class="history-list" id="historyList"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
